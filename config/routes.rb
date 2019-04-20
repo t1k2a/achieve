@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :blogs, only: [:index, :new, :create]
+  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
+    collection do
+      post :confirm
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

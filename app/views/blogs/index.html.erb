@@ -1,9 +1,11 @@
-<%= form_for do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-    <br>
-    <%= f.submit %>
-    <% end %>
+<p><%= notice %></p>
+<h1>ブログ一覧</h1>
+
+<% @blogs.each do |blog| %>
+    <p>タイトル：<%= blog.title %></p>
+    <p>本文：<%= blog.content %></p>
+    <%= link_to "ブログを編集する", edit_blog_path(blog.id) %>
+    <%= link_to "ブログを削除する", blog_path(blog), method: :delete, data: { confirm: '本当に削除してもいいですか？' } %>
+<% end %>
+
+<%= link_to "ブログを作成する", new_blog_path %>
