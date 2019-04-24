@@ -9,10 +9,10 @@
 <body>
   <header>
     <ul>
-      <li><a href="#">Achieve</a></li>
-      <li><a href="#">トップページ</a></li>
-      <li><a href="#">お問い合わせ</a></li>
-      <li><a href="#">ブログ</a></li>
+      <li><%= link_to "Achieve", root_path %></li>
+      <li><%= link_to "トップページ", root_path %></li>
+      <li><%= link_to "お問い合わせ", new_contact_path %></li>
+      <li><%= link_to "ブログ", blogs_path %></li>
     </ul>
   </header>
   <section class="main-header">
