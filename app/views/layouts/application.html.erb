@@ -5,6 +5,41 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+      <nav class ="navbar navbar-default">
+      <div class="container-fruid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+          data-target="#bs-example-navbar-collapse-1" aria-expand="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Archive", root_path, class:"navbar-brand" %>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "お問い合わせ", new_contact_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expand="false">Dropdown<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "ブログ", blogs_path %></li>
+              </ul>
+            </li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+          <% end %>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
 </head>
 <body>
 
