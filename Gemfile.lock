@@ -204,10 +204,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
-<<<<<<< HEAD
   faker
-=======
->>>>>>> acf954c15505ff70144c1cea752304d62152eaa8
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
