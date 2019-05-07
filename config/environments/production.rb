@@ -1,4 +1,16 @@
 Rails.application.configure do
+  ActionMailer::Base.delivery_method =:smtp
+  ActionMailer::Base.smtp_settings = 
+  {
+    user_name: "",
+    password: "",
+    domain: "heroku.com",
+    address: "smtp.sendgrid.net",
+    port: 587,
+    authentication: plain,
+    enable_starttls_suto: true
+  }
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
