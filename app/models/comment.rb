@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
-  belongs_to :user
+class Comment < ActiveRecord::Base
   belongs_to :blog
+  belongs_to :user
 end
