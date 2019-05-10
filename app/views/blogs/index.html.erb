@@ -10,11 +10,6 @@
         <% @blogs.each do |blog| %>
         <div class ="row">
         <%= link_to blog_path(blog) do %>
-            <% if blog.user_id? %>
-            ユーザーID：<%= blog.user_id %>
-            <% else %>
-            ユーザーID：null
-            <% end %>
             <h4><strong><%= blog.title %></strong></h4>
             <% end %>
             <p><%= blog.content %></p>
