@@ -16,10 +16,16 @@ class CommentsController < ApplicationController
       end
     end
   end
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to show_blog_path, notice: "コメントを削除しました！"
+  end
+
 
   private
     # ストロングパラメーター
     def comment_params
       params.require(:comment).permit(:blog_id, :content)
     end
-  end
+end
