@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  resources :users, only:[:index]
+
  resources :blogs do
   resources :comments
 
@@ -19,6 +25,7 @@ end
       end
   end
   
+  resources: :relationships, only: [:create, :destroy]
   root 'top#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
