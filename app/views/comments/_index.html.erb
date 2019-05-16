@@ -7,7 +7,6 @@
         <p class="left"><%= comment.content %></p>
         <% if current_user.name == comment.user.name %>
           <p class="right">
-            <%= link_to '', edit_blog_comment_path(blog, comment), class: "fa fa-pencil-square-o fa-lg" %>
             <%= link_to '削除', blog_comment_path(blog, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
           </p>
         <% end %>
