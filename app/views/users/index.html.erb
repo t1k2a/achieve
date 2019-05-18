@@ -2,9 +2,10 @@
     <h2>ユーザー</h2>
     <% @users.each do |user| %>
         <div class="container-child col-md-2 col-sm-4 col-xs-6">
-        <%= user.email %>
+       <%= link_to users_path(user) do %>
+            <h4><strog><%= user.name %></strog></h4>
+        <% end %>
         <%= render 'follow_form', user: user %>
         </div>
-    <%= render 'follow_form', user: user %>
     <% end %>
-    </div>
+</div>

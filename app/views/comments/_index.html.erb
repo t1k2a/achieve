@@ -2,8 +2,7 @@
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
-        <!--ユーザーのIDを確認する用にidを指定-->
-        <p class="left"><%= comment.user.id %>の<%= comment.user.name %>さんがコメントしました。</p> 
+        <p class="left"><%= comment.user.name %>さんがコメントしました。</p> 
         <p class="left"><%= comment.content %></p>
         <% if current_user.name == comment.user.name %>
           <p class="right">
