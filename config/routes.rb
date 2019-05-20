@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-  resources :users, only:[:index]
+  resources :users, only:[:index, :show]
 
  resources :blogs do
   resources :comments
