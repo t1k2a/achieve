@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
          has_many :folllowers, through: :reverse_relationships, source: :follower
     
     def follow!(other_user)
-        relationships.create!(followed_id: other_user_id)
+        relationships.create!(followed_id: other_user.id)
     end
     
     def following?(other_user)
@@ -22,6 +22,6 @@ class User < ActiveRecord::Base
     end
     
     def unfollow!(other_user)
-        relationships.find_by(followed_id: other_user_id).destroy
+        relationships.find_by(followed_id: other_user.id).destroy
     end
 end

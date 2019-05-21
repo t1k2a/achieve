@@ -1,9 +1,9 @@
 class RelationshipsController < ApplicationController
-  before_action :authenicate_user!
+  before_action :authenticate_user!
   respond_to :js
   
   def create
-    @user = USer.find(params[:relationship][:followed_id])
+    @user = User.find(params[:relationship][:followed_id])
     current_user.follow!(@user)
     respond_with @user
   end
