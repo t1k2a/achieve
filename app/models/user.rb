@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
          
          has_many :followed_users, through: :relationships, source: :followed
          has_many :folllowers, through: :reverse_relationships, source: :follower
+         
+         has_and_belongs_to_many :taks, dependent: :destroy
     
     def follow!(other_user)
         relationships.create!(followed_id: other_user.id)

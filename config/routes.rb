@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   collection do
     post :confirm
   end
+  
+   resources :users, only: [:index, :show, :edit, :update] do
+      resources :tasks
+    end
 end
     
     resources :contacts, only: [:new, :create] do
