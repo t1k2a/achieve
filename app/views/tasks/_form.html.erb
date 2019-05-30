@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.hidden_field :user_id %>
   </div>
 
   <div class="field">
@@ -32,8 +31,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :charge_id %>
-    <%= f.number_field :charge_id %>
+    <%= f.hidden_field :charge_id %>
   </div>
 
   <div class="field">
@@ -42,8 +40,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :status %>
-    <%= f.number_field :status %>
+    <%=f.selet tatus [["未着手", "0"], ["対応中", "1"]] %>
   </div>
 
   <div class="actions">

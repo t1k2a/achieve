@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @task.user %>
+  <%= @task.user.email %>
 </p>
 
 <p>
@@ -22,17 +22,17 @@
 
 <p>
   <strong>Charge:</strong>
-  <%= @task.charge_id %>
+  <%= @task.charge.name %>
 </p>
 
 <p>
   <strong>Done:</strong>
-  <%= @task.done %>
+  <%= @task.done? then "完了" else "未完了" end %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @task.status %>
+  <%= @task.status == 1? "対応中" : "未着手" %>
 </p>
 
 <%= link_to 'Edit', edit_user_task_path(@task.user, @task) %> |
