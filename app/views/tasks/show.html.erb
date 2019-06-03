@@ -27,7 +27,7 @@
 
 <p>
   <strong>Done:</strong>
-  <%= @task.done? then "完了" else "未完了" end %>
+  <%= if @task.done? then "完了" else "未完了" end %>
 </p>
 
 <p>

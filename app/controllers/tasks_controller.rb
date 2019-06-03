@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Taske.where(user_id: params[:user_id]).where.not(done: true).order(update_at: desc)
+    @tasks = Task.where(user_id: params[:user_id]).where.not(done: true).order(updated_at: :desc)
     @user = User.find(params[:user_id])
   end
 
@@ -76,6 +76,6 @@ class TasksController < ApplicationController
     
     def correct_user
       @user = User.find(params[:user_id])
-      redirect_to(user_tasks_path(current_user) unless current_user == @user)
+      redirect_to(user_tasks_path(current_user)) unless current_user == @user
     end
 end
