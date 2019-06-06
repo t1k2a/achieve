@@ -21,7 +21,8 @@
   </div>
 
   <div class="field">
-    <%= f.text_area :context %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
   </div>
 
   <div class="field">
@@ -39,7 +40,7 @@
   </div>
 
   <div class="field">
-    <%=f.selet :status, [["未着手", "0"], ["対応中", "1"]] %>
+    <%=f.select :status, [["未着手", "0"], ["対応中", "1"]] %>
   </div>
 
   <div class="actions">
