@@ -12,7 +12,12 @@
 #     User.create!(email: email, password: password, password_confirmation: password,)
 # end
 
-100.times do |n|
-    Blog.create(title: "seederData", content: "テストデータ", user_id: n)
-    n = n + 1
-end
+# 100.times do |n|
+#     Blog.create(title: "seederData", content: "テストデータ", user_id: n)
+#     n = n + 1
+# end
+
+1.times do |n|
+    email = "admin@example.com"
+    password = "admin"
+end    
