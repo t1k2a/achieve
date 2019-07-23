@@ -1,14 +1,13 @@
 .navbar-default {
-  border: 0;
-  padding: 5px 25px;
+    border: 0;
+    padding: 5px 25px;
+    color: white;
 }
-
 .navbar {
-  background-color: transparent;
-  color:white;
-  margin-bottom: 0px;
+    background-color: transparent;
+    color: white;
+    margin-bottom: 0px;
 }
-
 .navbar-default {
   .navbar-brand {
     color: #ccc;
@@ -16,14 +15,12 @@
       color: white;
     }
   }
-
   .navbar-nav > li > a {
     color: #ccc;
     &:hover, &:focus {
       color: white;
     }
   }
-  
   .navbar-nav > .open > a {
     background-color: transparent;
     color: white;
@@ -33,23 +30,21 @@
     }
   }
 }
-
-@media(max-witdth: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ccc;
-    text-align: center;
-    &:hover, &:focus {
-      color:white;
-    }
-  }
-  
-  .navbar-default .navbar-toggle {
-    background-color: transparent;
-    &:hover, &:focus {
-      background-color: transparent;
-    }
-}
-}
+// @media (max-width: 767px) {
+// .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+//     color: #ccc;
+//     text-align: center;
+//     &:hover, &:focus {
+//       color: white;
+//     }
+//   }
+//   .navbar-default .navbar-toggle {
+//     background-color: transparent;
+//     &:hover, &:focus {
+//       background-color: transparent;
+//     }
+//   }
+// }
 
 header {
   width: 100px;

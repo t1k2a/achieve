@@ -5,8 +5,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  
-      <nav class ="navbar navbar-default">
+      <nav class ="navbar-default">
       <div class="container-fruid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
@@ -18,6 +17,7 @@
           </button>
           <%= link_to "Archive", root_path, class:"navbar-brand" %>
         </div>
+        </header>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "お問い合わせ", new_contact_path %></li>
