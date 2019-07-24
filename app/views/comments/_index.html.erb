@@ -2,11 +2,11 @@
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
-        <p class="left"><%= comment.user.name %>さんがコメントしました。</p> 
+        <p class="left"><%= comment.user.name %>さん：<%= comment.created_at.strftime("%y/%m/%d %p %l:%M") %></p> 
         <p class="left"><%= comment.content %></p>
         <% if current_user.name == comment.user.name %>
           <p class="right">
-            <%= link_to '削除', blog_comment_path(blog, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
+            <%= link_to "削除", blog_comment_path(blog, comment), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
           </p>
         <% end %>
       </li>

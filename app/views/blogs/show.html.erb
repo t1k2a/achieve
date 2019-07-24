@@ -2,23 +2,26 @@
 <div class="child row">
   <div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
     <div class="blog-text">
-      <p class="left"><strong>タイトル</strong></p>
-      <p class="left"><%= @blog.title %></p>
-      <p class="left"><strong>内容</strong></p>
-      <p class="left"><%= @blog.content %></p>
-      <p class="right">
+      <!--<p class="left"><strong>タイトル</strong></p>-->
+      <h1 class="left"><%= @blog.title %></h1>
+      <!--<p class="left"><strong>内容</strong></p>-->
+      <h4 class="left"><%= @blog.content %></h4>
+      <h5 class="right">
         <strong>作成時間:</strong>
         <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
-      </p>
+      </h5>
+        <% if current_user.id == @blog.user_id %>
+        <%= link_to "編集", edit_blog_path(@blog), class: 'btn btn-default btn-sm btn-success' %>
+        <%= link_to "削除", blog_path(@blog), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    <% end %>
     </div>
-    <p>コメント一覧</p>
+<br>
+    <h4 class="left">コメント一覧</h4>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
     </div>
+    <h4 class="left">コメント投稿</h4>
     <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
-    <% if current_user.id == @blog.user_id %>
-      <%= link_to '編集', edit_blog_path(@blog) %> |
-    <% end %>
     <%= link_to '戻る', blogs_path %>
   </div>
 </div>
