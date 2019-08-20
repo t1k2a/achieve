@@ -8,7 +8,7 @@ module ActionView
                 resource = self.instance_variable_get("@#{object_name}")
                 return '' if !resource || resource.errors.empty?
                 
-                messages = resouece.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
+                messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
                 
                 html = <<-HTML
                 <div class="alert alert-danger">

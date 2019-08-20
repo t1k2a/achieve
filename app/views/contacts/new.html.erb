@@ -4,6 +4,7 @@
     <h2>お問い合わせ</h2>
     
     <%= form_for(@contact) do |f| %>
+      <%= f.error_messages! %>
         <%= f.label :name %>
         <br>
         <%= f.text_field :name %>

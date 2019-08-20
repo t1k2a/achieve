@@ -7,22 +7,20 @@ Rails.application.routes.draw do
   end
   
   # resources :users, only: [:index, :show, :edit, :update] do
-  #   resources :tasks
   # end
   
   resources :users, only:[:index, :show]
 
-  resources :users, only:[:index] do 
-    resources :tasks
-    resources :submit_requests, shallow: true do # shallowはネストを浅くする　ここでは edit_tasks_submit_requestsをedit_submit_requestsにする
-      get 'approve'
-      get 'unapprove'
-      get 'reject'
-      collection do
-        get 'index'
-      end
-    end
-  end
+  # resources :users, only:[:index] do 
+  #   resources :submit_requests, shallow: true do # shallowはネストを浅くする　ここでは edit_tasks_submit_requestsをedit_submit_requestsにする
+  #     get 'approve'
+  #     get 'unapprove'
+  #     get 'reject'
+  #     collection do
+  #       get 'index'
+  #     end
+    # end
+  # end
   
   resources :blogs do
   resources :comments
